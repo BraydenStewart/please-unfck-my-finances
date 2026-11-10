@@ -1,0 +1,26 @@
+{
+  "_readme": "Run knobs. Copy to settings.json and edit.",
+  "run": {
+    "dry_run": true,
+    "_dry_run_note": "The agent is read-only in every mode. dry_run additionally forbids writing anything outside reports/, state/ and logs/.",
+    "report_dir": "reports",
+    "currency": "USD"
+  },
+  "analysis": {
+    "months_lookback": 3,
+    "flag_new_recurring_charges": true,
+    "flag_fees_and_interest": true,
+    "large_transaction_usd": 250,
+    "debt_strategy": "avalanche",
+    "_debt_strategy_options": "avalanche (highest APR first) | snowball (smallest balance first)",
+    "category_overrides_path": "config/categories.json"
+  },
+  "schedule": {
+    "frequency": "manual",
+    "_frequency_options": "manual | weekly | monthly"
+  },
+  "privacy": {
+    "redact_account_numbers_in_reports": true,
+    "never_read_paths": [".ssh", "AppData", "Documents"]
+  }
+}

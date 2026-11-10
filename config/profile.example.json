@@ -1,0 +1,24 @@
+{
+  "_readme": "Facts about your money situation. Copy to profile.json and fill in. Leave unknowns empty; the agent asks rather than guesses.",
+  "name": "",
+  "country": "US",
+  "state": "",
+  "filing_status": "",
+  "household": { "partner_income": false, "dependents": 0 },
+  "income": [
+    { "source": "", "type": "w2 | 1099 | other", "gross_monthly": null, "pay_frequency": "biweekly | semimonthly | monthly | irregular", "next_payday": "" }
+  ],
+  "accounts": [
+    { "name": "", "kind": "checking | savings | credit_card | loan | brokerage | retirement", "institution": "", "last4": "", "statement_glob": "data/statements/*.csv" }
+  ],
+  "debts": [
+    { "name": "", "balance": null, "apr_percent": null, "min_payment": null, "due_day": null }
+  ],
+  "fixed_bills": [
+    { "name": "", "amount": null, "due_day": null, "autopay": false }
+  ],
+  "emergency_fund_target_months": 3,
+  "goals": [
+    { "name": "", "target_amount": null, "target_date": "" }
+  ]
+}

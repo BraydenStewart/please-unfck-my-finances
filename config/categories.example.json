@@ -1,0 +1,150 @@
+{
+ "_readme": "Ordered rules: first regex (case-insensitive, matched on description) that fits wins. Optional 'sign': 'in' or 'out' restricts by amount sign. Edit and re-run scripts/categorize.py. Copy to categories.json (onboarding does this) and add your own merchants, employers and internal-transfer patterns.",
+ "rules": [
+  {
+   "c": "fees_bank",
+   "re": "OVERDRAFT FEE|INSUFFICIENT FUNDS|REJECTED ITEM|^FEE POS|\bNSF\b|RETURNED ITEM"
+  },
+  {
+   "c": "fees_interest",
+   "re": "CREDIT INTEREST|INTEREST (CHARGE|PAID|PAYMENT)|ANNUAL FEE|LATE FEE",
+   "sign": "out"
+  },
+  {
+   "c": "interest_income",
+   "re": "CREDIT INTEREST|DIVIDEND",
+   "sign": "in"
+  },
+  {
+   "c": "transfer_internal",
+   "re": "LOAN PROCEEDS TO SHARES|Internet Transfer (to|from) XXX|OVERDRAFT TRANSFER|SHARED BRANCH|Shares? Transfer"
+  },
+  {
+   "c": "income_payroll",
+   "re": "PAYROLL|DIRECT DEP",
+   "sign": "in"
+  },
+  {
+   "c": "income_crypto",
+   "re": "COINBASE",
+   "sign": "in"
+  },
+  {
+   "c": "crypto",
+   "re": "COINBASE",
+   "sign": "out"
+  },
+  {
+   "c": "investing",
+   "re": "SCHWAB|ROBINHOOD|FIDELITY|VANGUARD|ACORNS|WEBULL"
+  },
+  {
+   "c": "gambling_dfs",
+   "re": "PRIZEPICKS|UNDERDOG|DRAFTKINGS|FANDUEL|SLEEPER|DABBLE|FLIFF|BETMGM|CAESARS"
+  },
+  {
+   "c": "bnpl",
+   "re": "AFFIRM|KLARNA|AFTERPAY|SEZZLE|ZIP\\.CO"
+  },
+  {
+   "c": "debt_payment",
+   "re": "CREDIT ONE|CITI CARD|CAPITAL ONE|DISCOVER|SYNCHRONY|LOAN PMT|STUDENT LOAN|NAVIENT|NELNET"
+  },
+  {
+   "c": "subscriptions",
+   "re": "NETFLIX|HULU|SPOTIFY|APPLE\\.COM/BILL|ITUNES|APL\\*|ADOBE|MICROSOFT|ZWIFT|AMAZON PRIME|PRIME VIDEO|ROCKET MONEY|DISNEY|HBO|YOUTUBE|PARAMOUNT|PEACOCK|OPENAI|CHATGPT|ICLOUD|GOOGLE \\*|PATREON|MIDJOURNEY|MOJANG|APPLE COM BILL|STEAM|PLAYSTATION|XBOX|NINTENDO"
+  },
+  {
+   "c": "fitness",
+   "re": "TRUFIT|CRUNCH FIT|FIT PROJECT|ABC\\*|ABCCLUB|CLUB FEES|PLANET FITNESS|GYM|ANYTIME FIT|TRU ?FIT"
+  },
+  {
+   "c": "utilities_internet",
+   "re": "OPTIMUM|SPECTRUM|AT&T|VERIZON|T-MOBILE|TMOBILE|ATMOS|ENTEX|XFINITY|COMCAST|ELECTRIC|WATER"
+  },
+  {
+   "c": "gas_fuel",
+   "re": "H-E-B GAS|EXXON|SUNOCO|SHELL|STRIPES|BUC-EE|CHEVRON|VALERO|MURPHY|FUEL|7-ELEVEN|CIRCLE K|RACETRAC|ALLSUP|PMUSA|CORNER STORE|EXPRESS MART|CAR ?WASH"
+  },
+  {
+   "c": "groceries",
+   "re": "H-E-B|HEB|COSTCO|WAL-MART|WM SUPERCENTER|WALMART|ALDI|KROGER|WHOLE FOODS|TRADER JOE|SAMS CLUB|SPROUTS"
+  },
+  {
+   "c": "dining_fastfood",
+   "re": "MCDONALD|RAISING CANE|CHICK-FIL|WHATABURGER|SONIC|CHIPOTLE|PANDA|IHOP|SMOOTHIE|DONUT|TACO|PIZZA|BURGER|WENDY|SUBWAY|STARBUCKS|DUTCH ?BROS|DOMINO|JERSEY MIKE|JIMMY JOHN|POPEYES|DAIRY QUEEN|KFC|CAFE|GRILL|SUSHI|KITCHEN|BBQ|RESTAURANT|TST\\*|SQ \\*|^DC - SQ|^DC SQ|UBER EATS|DOORDASH|GRUBHUB|BAKERY|COFFEE|BREWING|DENNY|FREDDY|PANERA|FUEGO|WINGSTOP|JACK IN THE BOX|DAIRY|CREAMERY|CUSTARD|SIP CLUB|ZEL\b"
+  },
+  {
+   "c": "alcohol_tobacco_vape",
+   "re": "VAPE|SPECS|LIQUOR|WINE|BEER|TOBACCO|SMOKE|TOTAL WINE|BAR |PUB"
+  },
+  {
+   "c": "shopping_online",
+   "re": "AMAZON|AMZN|BESTBUY|BEST BUY|EBAY|ETSY|TEMU|SHEIN|APPLE STORE|NEWEGG"
+  },
+  {
+   "c": "entertainment_services",
+   "re": "CINEMARK|XSCAPE|AQUATIC|THEATRE|CONCERT|TICKETMASTER|BOWLING|CSC SERVICEWORK|LAUNDRY"
+  },
+  {
+   "c": "health_pharmacy",
+   "re": "WALGREENS|CVS|PHARMACY|CLINIC|MEDICAL|DENTAL|URGENT CARE"
+  },
+  {
+   "c": "travel",
+   "re": "AIRBNB|HOTEL|AIRLINE|SOUTHWEST AIR|DELTA AIR|UNITED AIR|EXPEDIA|MARRIOTT|HILTON"
+  },
+  {
+   "c": "legal_fines_auto",
+   "re": "COURT|CITY OF|TOWING|RECOV|DPS|CITATION|TICKET PAYMENT"
+  },
+  {
+   "c": "gaming",
+   "re": "G2A|GLOCASH|IGVAULT|XSOLLA|GLD LLC|ROBLOX|EPIC GAMES|BLIZZARD"
+  },
+  {
+   "c": "crypto",
+   "re": "MOONPAY|PHANTOM|KRAKEN|BINANCE",
+   "sign": "out"
+  },
+  {
+   "c": "personal_care_clothing",
+   "re": "GUCCI|LULULEMON|CAVENDERS|TATTOO|PRINTIFY|SHOPIFY"
+  },
+  {
+   "c": "dining_fastfood",
+   "re": "OLIVE GARDEN|CHILI|BWW|BUFFALO WILD|PHO|APPLEBEE|LONGHORN|OUTBACK|QT\b"
+  },
+  {
+   "c": "rent_housing",
+   "re": "RENT|APARTMENT|LEASING"
+  },
+  {
+   "c": "shopping_general",
+   "re": "TARGET|ACADEMY SPORTS|DOLLAR|HOBBY|HOME DEPOT|LOWE|OLD NAVY|NIKE|FOOT LOCKER|HOT TOPIC|BARBER|SALON|HAIR|HOME DEP|CSC SERVICEWORK|CINEMARK|XSCAPE|AQUATIC"
+  },
+  {
+   "c": "transport_rideshare",
+   "re": "UBER(?! EATS)|LYFT|PARKING|TOLL|PARKMOBILE"
+  },
+  {
+   "c": "cash_atm",
+   "re": "\\bATM\\b|CASH WITHDRAWAL|CASH ADVANCE"
+  },
+  {
+   "c": "p2p_in",
+   "re": "VENMO|CASH APP|ZELLE|PAYPAL|APPLE CASH|CASHOUT",
+   "sign": "in"
+  },
+  {
+   "c": "p2p_out",
+   "re": "VENMO|CASH APP|ZELLE|PAYPAL|APPLE CASH|PP\\*|\\bPP\\b",
+   "sign": "out"
+  },
+  {
+   "c": "income_other",
+   "re": "DEPOSIT|MOBILE DEP|CREDIT",
+   "sign": "in"
+  }
+ ]
+}

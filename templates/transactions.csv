@@ -1,0 +1,5 @@
+date,account,description,amount,category
+2026-10-01,Checking,PAYCHECK EMPLOYER INC,2400.00,income
+2026-10-02,Checking,RENT,-1200.00,housing
+2026-10-03,Credit Card,NETFLIX,-15.49,subscriptions
+2026-10-05,Credit Card,INTEREST CHARGE,-38.12,fees_interest

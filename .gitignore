@@ -1,0 +1,41 @@
+# PERSONAL FINANCIAL DATA - never commit. Everything here is about one specific person's money.
+# The tracked *.example.* files are the templates you copy from.
+
+# Your identity, accounts, goals and rules
+config/profile.json
+config/settings.json
+
+# Statements, exports, receipts, tax docs
+data/*
+!data/README.md
+!data/statements/
+data/statements/*
+!data/statements/.gitkeep
+
+# Everything the agent produces about you
+reports/*
+!reports/.gitkeep
+logs/
+state/
+
+# Run artifacts
+*.log
+.run.lock/
+
+# Editor / OS noise
+.DS_Store
+.idea/
+.vscode/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Local Claude Code settings
+.claude/settings.local.json
+
+# Keep the templates
+!config/profile.example.json
+!config/settings.example.json
+# Personal merchant rules
+config/categories.json
